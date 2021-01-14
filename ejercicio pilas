@@ -1,0 +1,86 @@
+paquete  EjercicioPilas ;
+import  java.util.Scanner ;
+
+/ **
+ *
+*@autor Leslie Andrea Albarran Magaña
+ * /
+público  de clase  PilaDos {
+    public  static  void  main ( String [] args ) {
+
+        Scanner sc =  nuevo  Scanner ( System . In);
+
+        int opt, tope = 0 ;
+        char tam [] = nuevo  char [ 26 ];
+
+        Sistema . fuera . println ( "      Pila Abecedario " );
+
+        hacer {
+            Sistema . fuera . println ( " \ n 1.- Agregar \ n "
+                    +  " 2.- Mostrar \ n "
+                    +  " 3.- Eliminar \ n "
+                    +  " 4.- Llenar \ n "
+                    +  " 5.- Ordenar \ n "
+                    +  " 6.- Llenado aleatorio \ n "
+                    +  " 7.- Salir \ n " );
+
+            switch (opt = sc . nextInt ()) {
+
+                caso  1 :
+                    si (tope <  26 ) {
+                    Sistema . fuera . println ( " Ingresa una letra: " );
+                    tam [tope] = sc . siguiente () . charAt ( 0 );
+                    tope ++ ;
+                    } else { System . fuera . println ( " Pila llena " );}
+                romper ;
+
+                caso  2 :
+                    si (tope >  0 ) {
+                    para ( int i = tope -  1 ; i > = 0 ; i - ) {
+                        Sistema . fuera . imprimir ( "  " + tam [i]);
+                    }} else { System . fuera . println ( " Pila vacia no hay datos para mostrar " );}
+                romper ;
+
+                caso  3 :
+                    si (tope >  0 ) {
+                    Sistema . fuera . println ( " Dato eliminado " );
+                    tope - ;
+                    } else { System . fuera . println ( " Pila vacia no hay datos para borrar " );}
+                romper ;
+
+                caso  4 :
+                    si (tope <  26 ) {
+                    Sistema . fuera . println ( " Pila llenada " );
+                    para ( int i =  0 ; tope <  26 ; i ++ ) {
+                        tam [tope] = ( char ) ( ' A ' + i);
+                        tope ++ ;
+               }}
+               romper ;
+
+                caso  5 :
+                    int  Orden ;
+                    Sistema . fuera . println ( " Pila ordenada " );
+                    para ( int i =  0 ; i <  26 ; i ++ ) {
+                        para ( int p =  0 ; p < i; p ++ ) {
+                            si (tam [i] < tam [p]) {
+                                Orden  = tam [i];
+                                tam [i] = tam [p];
+                                tam [p] = ( char ) Orden ;
+                }}}
+                romper ;
+
+                caso  6 :
+                    char  Letras  =  ' A ' ;
+                    Sistema . fuera . println ( " Pila llenada aleatoriamente " );
+                    para ( int i =  0 ; i <  26 ; i ++ ) {
+                        si (tope <  26 ) {
+                            tam [tope] = ( char ) ( Letras  +  Math . aleatorio () *  26 );
+                            tope ++ ;
+                }}
+                romper ;
+
+            }
+        } while (opt ! = 7 );
+
+    }
+}
